@@ -48,14 +48,14 @@ def init(name: str):
 def build(i: bool = typer.Option(
         default=False,
         help="If True, Install package after building"
-), clean: bool = True):
+), cl: bool = True):
     """
     Build wheel
     """
     # python setup.py sdist
     # python setup.py bdist_wheel
     pkg_path = os.path.join(os.getcwd(), 'dist')  # $(pwd)/dist
-    if clean:
+    if cl:
         # remove all files in pkg_path
         os.system(f"rm {pkg_path}/*.whl")
     cmd = "python setup.py bdist_wheel"
@@ -80,3 +80,11 @@ def clean():
     """
     pkg_path = os.path.join(os.getcwd(), 'dist')  # $(pwd)/dist
     os.system(f"rm {pkg_path}/*.whl")
+
+
+@main.command()
+def upload():
+    """
+    Upload file to pypi
+    """
+    pass
