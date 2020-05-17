@@ -11,7 +11,7 @@ def select_license():
     Configure setup.py
     """
 
-    char = ''
+    char = ' '
     while char.lower() not in 'mga':
         char = input("Please select license [mga]: "
                      "[M]: MIT\n"

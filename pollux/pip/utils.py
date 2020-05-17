@@ -26,7 +26,7 @@ setup(
     scripts=[],
     packages=setuptools.find_packages(),
 )
-    """
+""".strip()
 
 
 def build_bin() -> str:
@@ -39,7 +39,7 @@ import re
 if __name__ == '__main__':
     sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
     sys.exit(app())
-"""
+""".strip()
 
 
 gitignore = """
@@ -188,4 +188,4 @@ cython_debug/
 .idea/
 .vscode/
 
-"""
+""".strip()

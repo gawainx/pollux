@@ -8,18 +8,12 @@ types = ['pip', 'tex', 'github']
 
 
 @app.command()
-def pip(act: str, name: str):
-    _act = act.lower()
-    if _act == 'init':
-        # init directory
-        pwd = sys.path[0]
-        if not os.listdir(pwd):
-            res = input("Current dir is not empty! Continue? [y/N]").lower()
-            if res == 'y':
-                # clean all file and continue
-                pass
-            else:
-                pass
+def init(t: str):
+    """
+    Init current path as a T type project
+    T can be tex, dl
+    dl for deep learning
+    """
 
 
 def _general():
